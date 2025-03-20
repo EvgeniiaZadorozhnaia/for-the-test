@@ -1,0 +1,12 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.footer {
+	height: 50px;
+	background-color: $color-dark;
+	font-size: $font14;
+	line-height: $line_height;
+	color: $color-light;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -1,0 +1,11 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.category {
+	color: $color-dark;
+	background-color: $color-gray;
+	font-size: $font12;
+	font-weight: $medium-weight;
+	line-height: $line_height;
+	border-radius: 4px;
+	padding: 4px 8px;
+}

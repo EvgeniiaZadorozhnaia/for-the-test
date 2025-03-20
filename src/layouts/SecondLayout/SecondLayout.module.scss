@@ -1,0 +1,75 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	padding: 40px 154px;
+	align-items: center;
+
+	@media (max-width: 1199px) {
+		padding: 50px 20px;
+		height: 1934px;
+		margin-bottom: 90px;
+	}
+
+	.header {
+		font-weight: $bold-weight;
+		font-size: $font32;
+		line-height: $line_height;
+	}
+
+	.info {
+		font-size: $font16;
+		line-height: $line_height;
+		text-align: center;
+
+		@media (max-width: 1199px) {
+			width: 342px;
+		}
+	}
+
+	.nav_menu {
+		position: relative;
+		height: 50px;
+		width: 666px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 35px;
+
+		.br {
+			position: absolute;
+			border: 1px solid $color-gray;
+			width: 1156px;
+			top: 49px;
+
+			@media (max-width: 1199px) {
+				width: calc(100% + 120px);
+				top: 53px;
+			}
+		}
+
+		@media (max-width: 1199px) {
+			display: flex;
+			justify-content: flex-start;
+			width: 100%;
+			overflow-x: auto;
+			overflow-y: hidden;
+			padding: 29px 0px;
+		}
+	}
+
+	.project_list {
+		width: 1156px;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 20px;
+
+		@media (max-width: 1199px) {
+			flex-direction: column;
+			align-items: center;
+			gap: 16px;
+		}
+	}
+}

@@ -1,38 +1,65 @@
-import clsx from 'clsx';
-import { FC, PropsWithChildren } from 'react';
-
+import { FC, PropsWithChildren, ReactNode } from 'react';
 import s from './MainLayout.module.scss';
 import { ErrorBoundary } from '@/components/ErrorBoundary';
-import { Link } from 'react-router-dom';
-import { ROUTES } from '@/routes.tsx';
-import { ButtonX } from '@components/ButtonX';
+import { CategoryCard } from '@/components/CategoryCard';
 
 interface MainLayoutProps {
-	classNames?: {
-		root?: string;
-		body?: string;
-		footer?: string;
-	};
+	children: ReactNode;
 }
+
+const categories = [
+	{
+		id: 1,
+		icon: '✨',
+		header: 'Креативный дизайн',
+		content:
+			'Мы создаем уникальные дизайны, которые отражают индивидуальность вашего бренда и привлекают внимание целевой аудитории.',
+		rate: 4.9,
+		category: 'Дизайн',
+	},
+	{
+		id: 2,
+		icon: '🚀',
+		header: 'Быстрая разработка',
+		content:
+			'Оптимизированный процесс разработки позволяет нам создавать высококачественные продукты в сжатые сроки.',
+		rate: 4.8,
+		category: 'Разработка',
+	},
+	{
+		id: 3,
+		icon: '📱',
+		header: 'Мобильная оптимизация',
+		content:
+			'Все наши проекты адаптированы для любых устройств, обеспечивая идеальный пользовательский опыт на любом экране.',
+		rate: 4.7,
+		category: 'Оптимизация',
+	},
+];
 
 export const MainLayout: FC<PropsWithChildren<MainLayoutProps>> = ({
 	children,
-	classNames,
 }) => {
 	return (
-		<div className={clsx(s.wrap, classNames?.root)}>
-			<div className={clsx(s.wrap__header, classNames?.footer)}>
-				<Link to={ROUTES.home.path} className={s.wrap__headerBtn}>
-					<ButtonX>{ROUTES.home.title}</ButtonX>
-				</Link>
-				<Link to={ROUTES.test.path} className={s.wrap__headerBtn}>
-					<ButtonX>{ROUTES.test.title}</ButtonX>
-				</Link>
-			</div>
-			<div className={clsx(s.wrap__body, classNames?.body)}>
-				<ErrorBoundary>{children}</ErrorBoundary>
-			</div>
-			<div className={clsx(s.wrap__footer, classNames?.footer)}>FOOTER</div>
-		</div>
+		<>
+			<main className={s.wrap}>
+				<h1 className={s.header}>Инновационные решения для вашего бизнеса</h1>
+				<div className={s.category_list}>
+					{categories.map((category) => (
+						<CategoryCard
+							key={category.id}
+							icon={category.icon}
+							header={category.header}
+							content={category.content}
+							rate={category.rate}
+							category={category.category}
+						/>
+					))}
+				</div>
+				<div>
+					<ErrorBoundary>{children}</ErrorBoundary>
+				</div>
+			</main>
+		</>
 	);
 };

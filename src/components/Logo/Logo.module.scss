@@ -1,0 +1,12 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.logo {
+	font-size: $font22;
+	font-weight: $bold-weight;
+	line-height: $line_height;
+	color: $color-light;
+
+	@media (max-width: 1199px) {
+		font-size: $font18;
+	}
+}

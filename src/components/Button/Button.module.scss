@@ -1,0 +1,12 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.wrap {
+	background: $color-primary;
+	padding: 6px 8px;
+	border: none;
+	border-radius: 4px;
+	color: $white;
+	font-size: $font14;
+	font-weight: $medium-weight;
+	line-height: $line_height;
+}

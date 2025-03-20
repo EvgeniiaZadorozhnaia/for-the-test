@@ -1,9 +1,15 @@
-import '@assets/scss/main.scss';
-import { routes } from '@/routes.tsx';
-import { useRoutes } from 'react-router-dom';
-import { MainLayout } from '@layouts/MainLayout';
+import '@assets/scss/base/index.scss';
+import { HomePage } from './pages/HomePage';
+import { Header } from './widgets/Header';
+import { Footer } from './widgets/Footer';
+import { FC } from 'react';
 
-export const App = () => {
-	const routeElement = useRoutes(routes);
-	return <MainLayout>{routeElement}</MainLayout>;
+export const App: FC = () => {
+	return (
+		<>
+			<Header />
+			<HomePage />
+			<Footer />
+		</>
+	);
 };

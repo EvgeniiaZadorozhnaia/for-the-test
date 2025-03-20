@@ -1,0 +1,50 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.link {
+	font-size: $font16;
+	line-height: $line_height;
+	position: relative;
+	text-decoration: none;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: -18px;
+		width: 0;
+		height: 2px;
+		background-color: transparent;
+	}
+
+	&:focus::after,
+	&.active::after {
+		width: 100%;
+	}
+}
+
+.header_link {
+	@extend .link;
+	color: $color-light;
+	min-width: max-content;
+
+	&::after {
+		background-color: $color-accent;
+	}
+}
+
+.menu_link {
+	@extend .link;
+	font-weight: $bold-weight;
+	color: $color-gray-dark;
+	min-width: max-content;
+
+	&::after {
+		background-color: $color-primary;
+		z-index: 1000;
+	}
+
+	&:focus,
+	&.active {
+		color: $color-primary;
+	}
+}

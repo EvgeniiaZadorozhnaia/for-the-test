@@ -1,0 +1,20 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 60px;
+	height: 60px;
+	background-color: $color-primary-light;
+	border-radius: 12px;
+	font-size: $font25;
+	position: absolute;
+	box-shadow: $shadow-sm;
+	top: -40px;
+	left: 155px;
+
+	@media (max-width: 1199px) {
+		left: 140px;
+	}
+}

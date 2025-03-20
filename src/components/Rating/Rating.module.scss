@@ -1,0 +1,15 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.star {
+	font-size: $font16;
+	line-height: $line_height;
+}
+
+.rate {
+	display: flex;
+	font-size: $font14;
+	line-height: $line_height;
+	gap: 3px;
+	align-items: center;
+	color: $color-gray-dark;
+}

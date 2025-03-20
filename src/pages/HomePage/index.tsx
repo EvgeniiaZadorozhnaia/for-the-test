@@ -1,6 +1,12 @@
 import { FC } from 'react';
-import s from './HomePage.module.scss';
+import { MainLayout } from '@layouts/MainLayout';
+import { SecondLayout } from '@/layouts/SecondLayout';
 
 export const HomePage: FC = () => {
-	return <div className={s.wrap}>HomePage</div>;
+	return (
+		<>
+			<MainLayout children={null} />
+			<SecondLayout children={null} />
+		</>
+	);
 };

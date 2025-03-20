@@ -1,0 +1,56 @@
+@use "../../assets/scss/base/design-tokens.scss" as *;
+
+.card {
+	box-shadow: $shadow-md;
+	background-color: $white;
+	width: 370px;
+	height: 202px;
+	border-radius: 8px;
+	position: relative;
+	text-align: center;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@media (max-width: 1199px) {
+		width: 340px;
+	}
+
+	.card_header {
+		font-weight: $bold-weight;
+		font-size: $font20;
+		position: absolute;
+		top: 47px;
+		margin: 0;
+	}
+
+	.card_content {
+		position: absolute;
+		font-size: $font14;
+		top: 81px;
+
+		@media (max-width: 1199px) {
+			width: 300px;
+		}
+	}
+
+	.card_footer {
+		position: absolute;
+		top: 155px;
+		display: flex;
+		justify-content: space-between;
+		width: 330px;
+		margin: 0 auto;
+
+		@media (max-width: 1199px) {
+			width: 300px;
+		}
+	}
+}
+
+.card:hover {
+	transform: scale(1.05);
+	box-shadow: $shadow-lg;
+	cursor: pointer;
+}
